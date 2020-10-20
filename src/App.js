@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Header from './Components/Header';
+import axios from 'axios';
+import Image from './Components/Image';
+import Favorites from './Components/Favorites';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      heroes: [],
+      heroName: null
+    }
+  }
+
+  componentDidMount() {
+    axios
+      .get('/api/superhero/images')
+      .then(res => {
+        this.setState({ heroes: res.data })
+        console.log('hit')
+      })
+      .catch(err => console.log(err))
+
+  }
+
+  render() {
+    const heroesMapped = this.state.heroes.map((hero, index) => {
+      return <Image key={index} hero={hero} />
+    })
+
+    return (
+      <div className="App">
+        <Header />
+        <Favorites />
+        { heroesMapped}
+      </div>
+    )
+  }
 }
+
 
 export default App;

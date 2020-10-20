@@ -1,0 +1,10 @@
+.hero{
+    background-color: blue;
+    display: flex;
+    width: 15vw;
+}
+.image{
+    background-color: blue;
+    display: flex;
+    height: 25vh;
+}
