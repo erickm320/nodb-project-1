@@ -8,11 +8,5 @@ class Favorite extends Component{
         super();
     }
 
-    getHeroes = () => {
-        axios.get('/api/fav-hero')
-        .then(res => {
-            this.setState({})
-        })
-    }
 }
 export default Favorite;
