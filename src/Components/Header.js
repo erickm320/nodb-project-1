@@ -1,9 +1,10 @@
 import React from 'react';
+import './Header.css'
 
 
 function Header(){
     return(
-        <div>
+        <div className="Intro">
             <h1>Super Hero Favorite</h1>
         </div>
     )

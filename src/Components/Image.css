@@ -1,10 +1,13 @@
 .hero{
-    background-color: blue;
     display: flex;
+    float: right;
     width: 15vw;
+    color: red;
+
 }
 .image{
-    background-color: blue;
     display: flex;
+    float: right;
+    align-self: center;
     height: 25vh;
 }

@@ -7,11 +7,11 @@ import Favorites from './Components/Favorites';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       heroes: [],
-      heroName: null
+      favHero: []
     }
   }
 
@@ -34,8 +34,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        {heroesMapped}
         <Favorites />
-        { heroesMapped}
       </div>
     )
   }

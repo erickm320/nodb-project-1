@@ -1,13 +1,18 @@
-import React, {Component} from 'react';
+import Axios from 'axios';
+import React, { Component } from 'react';
+import axios from 'axios';
 
-class Name extends Component{
-    render(){
-        return(
-            <div>
-                <h2>Click on your favorite</h2>
-            </div>
-        )
+
+class Favorite extends Component{
+    constructor(){
+        super();
+    }
+
+    getHeroes = () => {
+        axios.get('/api/fav-hero')
+        .then(res => {
+            this.setState({})
+        })
     }
 }
-
-export default Name;
+export default Favorite;
